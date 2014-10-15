@@ -31,6 +31,7 @@
         
         txtContent = [[UILabel alloc]init];
         [txtContent setBackgroundColor:[UIColor clearColor]];
+        [txtContent setFrame:CGRectMake(20, 32, 280, 220)];
     }
     
     return self;
