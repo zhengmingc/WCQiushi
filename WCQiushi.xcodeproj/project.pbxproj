@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F350A1D719F04C2800FA8677 /* Comments.m in Sources */ = {isa = PBXBuildFile; fileRef = F350A1D619F04C2800FA8677 /* Comments.m */; };
 		F35EB8C419EEDF38008EE50D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F35EB8C319EEDF38008EE50D /* main.m */; };
 		F35EB8C719EEDF38008EE50D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F35EB8C619EEDF38008EE50D /* AppDelegate.m */; };
 		F35EB8CA19EEDF38008EE50D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F35EB8C919EEDF38008EE50D /* ViewController.m */; };
@@ -69,6 +70,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F350A1D519F04C2800FA8677 /* Comments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comments.h; sourceTree = "<group>"; };
+		F350A1D619F04C2800FA8677 /* Comments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comments.m; sourceTree = "<group>"; };
 		F35EB8BE19EEDF38008EE50D /* WCQiushi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WCQiushi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F35EB8C219EEDF38008EE50D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F35EB8C319EEDF38008EE50D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -168,17 +171,19 @@
 		F35EB8C019EEDF38008EE50D /* WCQiushi */ = {
 			isa = PBXGroup;
 			children = (
-				F35EB8F119EF3102008EE50D /* Images */,
 				F35EB8C519EEDF38008EE50D /* AppDelegate.h */,
 				F35EB8C619EEDF38008EE50D /* AppDelegate.m */,
+				F35EB8E919EEE59F008EE50D /* Qiushi.h */,
+				F35EB8EA19EEE59F008EE50D /* Qiushi.m */,
+				F350A1D519F04C2800FA8677 /* Comments.h */,
+				F350A1D619F04C2800FA8677 /* Comments.m */,
+				F35EB8EE19EF21B7008EE50D /* CommentsCell.h */,
+				F35EB8EF19EF21B7008EE50D /* CommentsCell.m */,
 				F35EB8C819EEDF38008EE50D /* ViewController.h */,
 				F35EB8C919EEDF38008EE50D /* ViewController.m */,
 				F35EB8CE19EEDF38008EE50D /* Images.xcassets */,
 				F35EB8C119EEDF38008EE50D /* Supporting Files */,
-				F35EB8E919EEE59F008EE50D /* Qiushi.h */,
-				F35EB8EA19EEE59F008EE50D /* Qiushi.m */,
-				F35EB8EE19EF21B7008EE50D /* CommentsCell.h */,
-				F35EB8EF19EF21B7008EE50D /* CommentsCell.m */,
+				F35EB8F119EF3102008EE50D /* Images */,
 			);
 			path = WCQiushi;
 			sourceTree = "<group>";
@@ -400,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F35EB8CA19EEDF38008EE50D /* ViewController.m in Sources */,
+				F350A1D719F04C2800FA8677 /* Comments.m in Sources */,
 				F35EB8C719EEDF38008EE50D /* AppDelegate.m in Sources */,
 				F35EB8F019EF21B7008EE50D /* CommentsCell.m in Sources */,
 				F35EB8EB19EEE59F008EE50D /* Qiushi.m in Sources */,
@@ -581,6 +587,7 @@
 				F35EB8E319EEDF38008EE50D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F35EB8E419EEDF38008EE50D /* Build configuration list for PBXNativeTarget "WCQiushiTests" */ = {
 			isa = XCConfigurationList;
@@ -589,6 +596,7 @@
 				F35EB8E619EEDF38008EE50D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface CommentsCell : UITableViewCell
-@property(nonatomic, retain) UILabel *txtAnchor;
+@property(nonatomic, retain) UILabel *txtAuthor;
 @property(nonatomic, retain) UILabel *txtContent;
 @property(nonatomic, retain) UILabel *txtfloor;
 @property(nonatomic, retain) UIImageView *centerImageView;
+@property(nonatomic, retain) UIImageView *footView;
 
 -(void) resizeTheHeight;
 @end
