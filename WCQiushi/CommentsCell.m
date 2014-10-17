@@ -70,4 +70,4 @@
     [footView setFrame:CGRectMake(5, size.height+28, 310, 2)];
 }
 
-
+@end
