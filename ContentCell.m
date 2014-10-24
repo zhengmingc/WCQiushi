@@ -42,6 +42,19 @@
         [imgPhotoBtn setFrame:CGRectMake(0, 0, 0, 0)];
         [imgPhotoBtn addTarget:self action:@selector(ImageBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:imgPhotoBtn];
+        
+        headPhoto = [[UIImageView alloc] initWithFrame:CGRectMake(15, 5, 24, 24)];
+        [headPhoto setImage:[UIImage imageNamed:@"thumb_avatar.png"]];
+        [self addSubview:headPhoto];
+        
+        txtAuthor = [[UILabel alloc]initWithFrame:CGRectMake(45, 5, 200, 30)];
+        [txtAuthor setText:@"Anoynmous"];
+        [txtAuthor setFont:[UIFont fontWithName:@"Arial" size:16]];
+        [txtAuthor setBackgroundColor:[UIColor clearColor]];
+        [txtAuthor setTextColor:[UIColor brownColor]];
+        [self addSubview:txtAuthor];
+        
+        
     }
     
     return self;
