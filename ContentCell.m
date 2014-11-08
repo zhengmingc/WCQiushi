@@ -54,6 +54,8 @@
         [txtAuthor setTextColor:[UIColor brownColor]];
         [self addSubview:txtAuthor];
         
+        txtTag = [[UILabel alloc] initWithFrame:CGRectMake(45, 200, 200, 30)];
+        [txtTag setText:@""];
         
     }
     
