@@ -10,6 +10,8 @@
 	<string>WCQiushi</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>66DC3817DEB08478E73B74B731109BCA0A7F47FB</key>
+		<string>https://github.com/zhengmingc/qiushibaike.git</string>
 		<key>BDD3957C10067775935B010C27E82DA54A62941D</key>
 		<string>https://github.com/zhengmingc/WCQiushi.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>WCQiushi.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>66DC3817DEB08478E73B74B731109BCA0A7F47FB</key>
+		<string>../../../qiushibaike</string>
 		<key>BDD3957C10067775935B010C27E82DA54A62941D</key>
 		<string>../..</string>
 	</dict>
@@ -28,6 +32,14 @@
 	<string>BDD3957C10067775935B010C27E82DA54A62941D</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>66DC3817DEB08478E73B74B731109BCA0A7F47FB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>qiushibaike</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

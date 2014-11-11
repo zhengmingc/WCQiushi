@@ -11,5 +11,7 @@
 @interface ViewController : UIViewController
 
 
+@property(nonatomic, retain) UIView * m_helpView;
+
 @end
 
