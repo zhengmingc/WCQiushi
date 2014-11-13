@@ -151,4 +151,109 @@ UITableViewDelegate>
 }
 
 #pragma mark - TableView*
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if(tableView == _tableView){
+        return 1;
+    } else {
+        return [_list count];
+    }
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(tableView == _tableView) {
+        static NSString *identifier =@"_QiuShiCell";
+        ContentCell *cell = (ContentCell *) [tableView dequeueReusableCellWithIdentifier:identifier];
+        if(cell == nil){
+            cell = [[ContentCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.backgroundColor = [UIColor clearColor];
+            cell.contentView.backgroundColor = [UIColor clearColor];
+            cell.txtContent.numberOfLines = 0;
+        }
+        cell.txtContent.text = _qs.content;
+        if(_qs.imageURL != nil && ![_qs.imageURL isEqual:@""]){
+            cell.imgUrl = _qs.imageURL;
+            cell.imgMidUrl = _qs.imageMidURL;
+        } else {
+            cell.imgUrl = @"";
+            cell.imgMidUrl = @"";
+        }
+        if(_qs.author !=nil && ![_qs.author isEqual:@""]) {
+            cell.txtAuthor.text = _qs.author;
+        } else {
+            cell.txtAuthor.text = @"Anonymous";
+        }
+        if(_qs.tag != nil && ![_qs.tag isEqual:@""]){
+            cell.txtTag.text = _qs.tag;
+        }else {
+            cell.txtTag.text = @"";
+        }
+        [cell.goodBtn setTitle:[NSString stringWithFormat:@"%d", _qs.upCount] forState:UIControlStateNormal];
+        [cell.goodBtn setEnabled:NO];
+        [cell.badBtn setTitle:[NSString stringWithFormat:@"%d", _qs.downCount] forState:UIControlStateNormal];
+        [cell.badBtn setEnabled:NO];
+        [cell.commentsBtn setTitle:[NSString stringWithFormat:@"%d", _qs.commentsCount] forState:UIControlStateNormal];
+        [cell.commentsBtn setEnabled:NO];
+        
+        [cell resizeTheHeight];
+        return cell;
+    } else {
+        static NSString *identifier1 = @"_CommentCell";
+        CommentsCell *cell = (CommentsCell *) [tableView dequeueReusableCellWithIdentifier:identifier1];
+        if(cell ==nil){
+            cell = [[CommentsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier1];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.contentView.backgroundColor = [UIColor clearColor];
+            cell.txtContent.numberOfLines = 0;
+        }
+        Comments * cm = [_list objectAtIndex:indexPath.row];
+        cell.txtContent.text = cm.content;
+        cell.txtfloor.text = [NSString stringWithFormat:@"%d", cm.floor];
+        if(cm.author != nil && ![cm.author isEqual:@""]){
+            cell.txtAuthor.text = cm.author;
+        } else {
+            cell.txtAuthor.text = @"Anonymous";
+        }
+        [cell resizeTheHeight];
+        return cell;
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
+-(CGFloat) getTheHeight
+{
+    CGFloat contentWidth = 200;
+    UIFont *font = [UIFont fontWithName:@"Arial" size:16];
+    NSString *content = _qs.content;
+    CGSize size = [content sizeWithFont:font constrainedToSize:CGSizeMake(contentWidth, 220) lineBreakMode:UILineBreakModeTailTruncation];
+    CGFloat height;
+    if (_qs.imageURL==nil) {
+        height = size.height+214;
+    }else
+    {
+        height = size.height+294;
+    }
+
+    return height;
+}
+
+-(CGFloat) getTheCellHeight:(int) row
+{
+    CGFloat contentWidth = 280;
+    // 设置字体
+    UIFont *font = [UIFont fontWithName:@"Arial" size:14];
+    
+    Comments *cm = [self.list objectAtIndex:row];
+    // 显示的内容
+    NSString *content = cm.content;
+    // 计算出长宽
+    CGSize size = [content sizeWithFont:font constrainedToSize:CGSizeMake(contentWidth, 220) lineBreakMode:UILineBreakModeTailTruncation];
+    CGFloat height = size.height+30;
+    // 返回需要的高度
+    return height;
+}
 @end

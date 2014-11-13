@@ -67,4 +67,33 @@
     
 }
 
+-(void) resizeTheHeight
+{
+    CGFloat contentWidth = 280;
+    UIFont *font = [UIFont fontWithName:@"Arial" size:16];
+    CGSize size = [txtContent.text sizeWithFont:font constrainedToSize:CGSizeMake(contentWidth, 220) lineBreakMode:UILineBreakModeTailTruncation];
+    
+    [txtContent setFrame:CGRectMake(20, 28, 280, size.height + 60)];
+    
+    if (imgUrl!=nil&&![imgUrl isEqualToString:@""]) {
+        [imgPhotoBtn setFrame:CGRectMake(30, size.height+70, 72, 72)];
+        [centerImageView setFrame:CGRectMake(0, 0, 320, size.height+200)];
+        [imgPhotoBtn setImageURL:[NSURL URLWithString:imgUrl]];
+        [self imageButtonLoadedImage:imgPhotoBtn];
+    }
+    else
+    {
+        [imgPhotoBtn cancelImageLoad];
+        [imgPhotoBtn setFrame:CGRectMake(120, size.height, 0, 0)];
+        [centerImageView setFrame:CGRectMake(0, 0, 320, size.height+120)];
+    }
+    
+    [footView setFrame:CGRectMake(0, centerImageView.frame.size.height, 320, 15)];
+    [goodBtn setFrame:CGRectMake(10,centerImageView.frame.size.height-28,70,32)];
+    [badBtn setFrame:CGRectMake(100,centerImageView.frame.size.height-28,70,32)];
+    [commentsBtn setFrame:CGRectMake(230,centerImageView.frame.size.height-28,70,32)];
+    [txtTag setFrame:CGRectMake(40,centerImageView.frame.size.height-50,200, 30)];
+    [tagPhoto setFrame:CGRectMake(15,centerImageView.frame.size.height-50,24, 24)];
+    
+}
 @end

@@ -85,6 +85,16 @@
 		F3E787581A118FC8005AEA46 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E7874A1A118FC8005AEA46 /* CJSONDeserializer.m */; };
 		F3E787591A118FC8005AEA46 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E7874C1A118FC8005AEA46 /* CJSONScanner.m */; };
 		F3E7875A1A118FC8005AEA46 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E7874E1A118FC8005AEA46 /* CJSONSerializer.m */; };
+		F3E7875C1A140FD2005AEA46 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E7875B1A140FD2005AEA46 /* CFNetwork.framework */; };
+		F3E7875E1A140FF4005AEA46 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E7875D1A140FF4005AEA46 /* libz.1.2.5.dylib */; };
+		F3E787621A1412FE005AEA46 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E787601A1412FD005AEA46 /* ContentViewController.m */; };
+		F3E787631A1412FE005AEA46 /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3E787611A1412FE005AEA46 /* ContentViewController.xib */; };
+		F3E7876B1A1419A2005AEA46 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F3E787651A1419A2005AEA46 /* blueArrow.png */; };
+		F3E7876C1A1419A2005AEA46 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F3E787661A1419A2005AEA46 /* blueArrow@2x.png */; };
+		F3E7876D1A1419A2005AEA46 /* blueArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = F3E787671A1419A2005AEA46 /* blueArrowDown.png */; };
+		F3E7876E1A1419A2005AEA46 /* blueArrowDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F3E787681A1419A2005AEA46 /* blueArrowDown@2x.png */; };
+		F3E7876F1A1419A2005AEA46 /* PullingRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E7876A1A1419A2005AEA46 /* PullingRefreshTableView.m */; };
+		F3E787721A14234B005AEA46 /* tooles.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E787701A14234B005AEA46 /* tooles.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -217,6 +227,19 @@
 		F3E7874D1A118FC8005AEA46 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
 		F3E7874E1A118FC8005AEA46 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
 		F3E7874F1A118FC8005AEA46 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		F3E7875B1A140FD2005AEA46 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F3E7875D1A140FF4005AEA46 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		F3E7875F1A1412FD005AEA46 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentViewController.h; path = ../ContentViewController.h; sourceTree = "<group>"; };
+		F3E787601A1412FD005AEA46 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentViewController.m; path = ../ContentViewController.m; sourceTree = "<group>"; };
+		F3E787611A1412FE005AEA46 /* ContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContentViewController.xib; path = ../ContentViewController.xib; sourceTree = "<group>"; };
+		F3E787651A1419A2005AEA46 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueArrow.png; path = ../qiushibaike/NetDemo/Lib/PullingRefresh/blueArrow.png; sourceTree = "<group>"; };
+		F3E787661A1419A2005AEA46 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blueArrow@2x.png"; path = "../qiushibaike/NetDemo/Lib/PullingRefresh/blueArrow@2x.png"; sourceTree = "<group>"; };
+		F3E787671A1419A2005AEA46 /* blueArrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueArrowDown.png; path = ../qiushibaike/NetDemo/Lib/PullingRefresh/blueArrowDown.png; sourceTree = "<group>"; };
+		F3E787681A1419A2005AEA46 /* blueArrowDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blueArrowDown@2x.png"; path = "../qiushibaike/NetDemo/Lib/PullingRefresh/blueArrowDown@2x.png"; sourceTree = "<group>"; };
+		F3E787691A1419A2005AEA46 /* PullingRefreshTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PullingRefreshTableView.h; path = ../qiushibaike/NetDemo/Lib/PullingRefresh/PullingRefreshTableView.h; sourceTree = "<group>"; };
+		F3E7876A1A1419A2005AEA46 /* PullingRefreshTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PullingRefreshTableView.m; path = ../qiushibaike/NetDemo/Lib/PullingRefresh/PullingRefreshTableView.m; sourceTree = "<group>"; };
+		F3E787701A14234B005AEA46 /* tooles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tooles.m; path = ../qiushibaike/NetDemo/Lib/tooles.m; sourceTree = "<group>"; };
+		F3E787711A14234B005AEA46 /* tooles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tooles.h; path = ../qiushibaike/NetDemo/Lib/tooles.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +247,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3E7875E1A140FF4005AEA46 /* libz.1.2.5.dylib in Frameworks */,
+				F3E7875C1A140FD2005AEA46 /* CFNetwork.framework in Frameworks */,
 				F350A1F619F1BD5000FA8677 /* SystemConfiguration.framework in Frameworks */,
 				F350A1F419F1B93100FA8677 /* UIKit.framework in Frameworks */,
 			);
@@ -242,6 +267,9 @@
 		F350A1DB19F18BED00FA8677 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				F3E787701A14234B005AEA46 /* tooles.m */,
+				F3E787711A14234B005AEA46 /* tooles.h */,
+				F3E787641A14196F005AEA46 /* PullingRefresh */,
 				F3E787351A118FC8005AEA46 /* Touchjson */,
 				F3E7871A1A117365005AEA46 /* ASIHttp */,
 				F350A1DC19F18BF700FA8677 /* EGO */,
@@ -301,6 +329,8 @@
 		F350A1F219F1983B00FA8677 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3E7875D1A140FF4005AEA46 /* libz.1.2.5.dylib */,
+				F3E7875B1A140FD2005AEA46 /* CFNetwork.framework */,
 				F350A1F519F1BD5000FA8677 /* SystemConfiguration.framework */,
 				F350A1F319F1B93100FA8677 /* UIKit.framework */,
 			);
@@ -331,6 +361,9 @@
 			isa = PBXGroup;
 			children = (
 				F3E787151A1170FD005AEA46 /* CommentsViewController.h */,
+				F3E7875F1A1412FD005AEA46 /* ContentViewController.h */,
+				F3E787601A1412FD005AEA46 /* ContentViewController.m */,
+				F3E787611A1412FE005AEA46 /* ContentViewController.xib */,
 				F3E787161A1170FD005AEA46 /* CommentsViewController.m */,
 				F3E787171A1170FD005AEA46 /* CommentsViewController.xib */,
 				F350A1D819F177CF00FA8677 /* ContentCell.h */,
@@ -510,6 +543,19 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		F3E787641A14196F005AEA46 /* PullingRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				F3E787651A1419A2005AEA46 /* blueArrow.png */,
+				F3E787661A1419A2005AEA46 /* blueArrow@2x.png */,
+				F3E787671A1419A2005AEA46 /* blueArrowDown.png */,
+				F3E787681A1419A2005AEA46 /* blueArrowDown@2x.png */,
+				F3E787691A1419A2005AEA46 /* PullingRefreshTableView.h */,
+				F3E7876A1A1419A2005AEA46 /* PullingRefreshTableView.m */,
+			);
+			name = PullingRefresh;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -607,9 +653,12 @@
 				F35EB93219EF3102008EE50D /* icon_for_comment.png in Resources */,
 				F35EB94119EF3102008EE50D /* input_button_enable.png in Resources */,
 				F35EB92319EF3102008EE50D /* block_help.png in Resources */,
+				F3E7876E1A1419A2005AEA46 /* blueArrowDown@2x.png in Resources */,
 				F35EB94419EF3102008EE50D /* thumb_avatar.png in Resources */,
 				F35EB92919EF3102008EE50D /* button_vote_active.png in Resources */,
 				F35EB91F19EF3102008EE50D /* bar_background@2x.png in Resources */,
+				F3E787631A1412FE005AEA46 /* ContentViewController.xib in Resources */,
+				F3E7876C1A1419A2005AEA46 /* blueArrow@2x.png in Resources */,
 				F35EB92C19EF3102008EE50D /* defaultHeadImage.png in Resources */,
 				F35EB93919EF3102008EE50D /* icon_new_enable.png in Resources */,
 				F35EB93A19EF3102008EE50D /* icon_pic_enable.png in Resources */,
@@ -619,6 +668,7 @@
 				F35EB92B19EF3102008EE50D /* Default@2x.png in Resources */,
 				F35EB92619EF3102008EE50D /* button_login.png in Resources */,
 				F35EB8CF19EEDF38008EE50D /* Images.xcassets in Resources */,
+				F3E7876D1A1419A2005AEA46 /* blueArrowDown.png in Resources */,
 				F35EB93E19EF3102008EE50D /* icon_top_active.png in Resources */,
 				F35EB92219EF3102008EE50D /* block_foot_background.png in Resources */,
 				F35EB91D19EF3102008EE50D /* back@2x.png in Resources */,
@@ -632,6 +682,7 @@
 				F35EB92819EF3102008EE50D /* button_vote.png in Resources */,
 				F35EB93519EF3102008EE50D /* icon_help_active.png in Resources */,
 				F35EB92F19EF3102008EE50D /* icon_close.png in Resources */,
+				F3E7876B1A1419A2005AEA46 /* blueArrow.png in Resources */,
 				F35EB93319EF3102008EE50D /* icon_for_good.png in Resources */,
 				F35EB93419EF3102008EE50D /* icon_help.png in Resources */,
 			);
@@ -663,15 +714,18 @@
 				F35EB8C719EEDF38008EE50D /* AppDelegate.m in Sources */,
 				F3E787501A118FC8005AEA46 /* CDataScanner.m in Sources */,
 				F3E787311A117365005AEA46 /* ASIHTTPRequest.m in Sources */,
+				F3E787621A1412FE005AEA46 /* ContentViewController.m in Sources */,
 				F3E787551A118FC8005AEA46 /* NSCharacterSet_Extensions.m in Sources */,
 				F3E787531A118FC8005AEA46 /* CJSONSerializedData.m in Sources */,
 				F3E7872E1A117365005AEA46 /* ASIAuthenticationDialog.m in Sources */,
 				F350A1E719F18C7700FA8677 /* EGOImageLoader.m in Sources */,
+				F3E787721A14234B005AEA46 /* tooles.m in Sources */,
 				F3E787541A118FC8005AEA46 /* CDataScanner_Extensions.m in Sources */,
 				F3E787521A118FC8005AEA46 /* CJSONDeserializer_BlocksExtensions.m in Sources */,
 				F35EB8F019EF21B7008EE50D /* CommentsCell.m in Sources */,
 				F3E787581A118FC8005AEA46 /* CJSONDeserializer.m in Sources */,
 				F350A1EF19F1906600FA8677 /* EGOImageView.m in Sources */,
+				F3E7876F1A1419A2005AEA46 /* PullingRefreshTableView.m in Sources */,
 				F3E787561A118FC8005AEA46 /* NSDictionary_JSONExtensions.m in Sources */,
 				F3E7875A1A118FC8005AEA46 /* CJSONSerializer.m in Sources */,
 				F350A1E019F18C1800FA8677 /* EGOImageButton.m in Sources */,
