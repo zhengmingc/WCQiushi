@@ -15,6 +15,6 @@
 @property(nonatomic, assign) QiuShiType qiuType;
 @property(nonatomic, assign) QiuShiTime qiuTime;
 
--(void) LoadPageOfQiushiType:(QiuShiType) type AndTime:(QiuShiType) time;
+-(void) LoadPageOfQiushiType:(QiuShiType) type AndTime:(QiuShiTime) time;
 -(CGFloat) getTheHeight:(NSInteger) row;
 @end

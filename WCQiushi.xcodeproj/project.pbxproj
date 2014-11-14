@@ -95,6 +95,7 @@
 		F3E7876E1A1419A2005AEA46 /* blueArrowDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F3E787681A1419A2005AEA46 /* blueArrowDown@2x.png */; };
 		F3E7876F1A1419A2005AEA46 /* PullingRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E7876A1A1419A2005AEA46 /* PullingRefreshTableView.m */; };
 		F3E787721A14234B005AEA46 /* tooles.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E787701A14234B005AEA46 /* tooles.m */; };
+		F3E787761A143275005AEA46 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E787751A143275005AEA46 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +241,8 @@
 		F3E7876A1A1419A2005AEA46 /* PullingRefreshTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PullingRefreshTableView.m; path = ../qiushibaike/NetDemo/Lib/PullingRefresh/PullingRefreshTableView.m; sourceTree = "<group>"; };
 		F3E787701A14234B005AEA46 /* tooles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tooles.m; path = ../qiushibaike/NetDemo/Lib/tooles.m; sourceTree = "<group>"; };
 		F3E787711A14234B005AEA46 /* tooles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tooles.h; path = ../qiushibaike/NetDemo/Lib/tooles.h; sourceTree = "<group>"; };
+		F3E787741A143275005AEA46 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = ../qiushibaike/NetDemo/Lib/HUD/MBProgressHUD.h; sourceTree = "<group>"; };
+		F3E787751A143275005AEA46 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = ../qiushibaike/NetDemo/Lib/HUD/MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +270,7 @@
 		F350A1DB19F18BED00FA8677 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				F3E787731A14325D005AEA46 /* HUD */,
 				F3E787701A14234B005AEA46 /* tooles.m */,
 				F3E787711A14234B005AEA46 /* tooles.h */,
 				F3E787641A14196F005AEA46 /* PullingRefresh */,
@@ -556,6 +560,15 @@
 			name = PullingRefresh;
 			sourceTree = "<group>";
 		};
+		F3E787731A14325D005AEA46 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				F3E787741A143275005AEA46 /* MBProgressHUD.h */,
+				F3E787751A143275005AEA46 /* MBProgressHUD.m */,
+			);
+			name = HUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -729,6 +742,7 @@
 				F3E787561A118FC8005AEA46 /* NSDictionary_JSONExtensions.m in Sources */,
 				F3E7875A1A118FC8005AEA46 /* CJSONSerializer.m in Sources */,
 				F350A1E019F18C1800FA8677 /* EGOImageButton.m in Sources */,
+				F3E787761A143275005AEA46 /* MBProgressHUD.m in Sources */,
 				F3E787341A117365005AEA46 /* Reachability.m in Sources */,
 				F35EB8EB19EEE59F008EE50D /* Qiushi.m in Sources */,
 				F3E787571A118FC8005AEA46 /* NSScanner_Extensions.m in Sources */,
