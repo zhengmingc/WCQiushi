@@ -96,4 +96,19 @@
     [tagPhoto setFrame:CGRectMake(15,centerImageView.frame.size.height-50,24, 24)];
     
 }
+
+-(void) imageButtonLoadedImage:(EGOImageButton *)imageButton
+{
+    UIImage *image = imageButton.imageView.image;
+    CGFloat w = 1.0f;
+    CGFloat h = 1.0f;
+    if(image.size.width > 280) {
+        w = image.size.width/280;
+    }
+    if(image.size.width > 72) {
+        h = image.size.height /72;
+    }
+    CGFloat scole = w>h?w:h;
+    [imgPhotoBtn setFrame:CGRectMake(30, imageButton.frame.origin.y, imageButton.frame.size.width/scole, imageButton.frame.size.height/scole)];
+}
 @end

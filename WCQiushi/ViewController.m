@@ -28,8 +28,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"main_background.png"]]];
-    UIImage *headImage = [UIImage imageNamed:@"head_background.png"];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]]];
+    UIImage *headImage = [UIImage imageNamed:@"header_background_pink.png"];
     UIImageView *headView = [[UIImageView alloc] initWithImage:headImage];
     [headView setFrame:CGRectMake(0, 0, 320, 44)];
     [self.view addSubview:headView];
@@ -39,6 +39,7 @@
     [_headLogoView setFrame:CGRectMake(103, 6, 113, 32)];
     [self.view addSubview:_headLogoView];
     
+    /**
     _photoBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_photoBtn setFrame:CGRectMake(8, 6, 32, 32)];
     [_photoBtn setBackgroundImage:[UIImage imageNamed:@"icon_pic_enable.png"] forState:UIControlStateNormal];
@@ -57,23 +58,26 @@
     [_fourTypeBtn setHidden:YES];
     [self.view addSubview:_fourTypeBtn];
     
-    _writeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _writeBtn = [UIButton buttonWithT/Users/wenwen/NMA/apps/UniversalTestApp/UniversalTestAppDevelopmentNMA.xcworkspaceype:UIButtonTypeCustom];
     [_writeBtn setFrame:CGRectMake(280, 6, 32, 32)];
     [_writeBtn setImage:[UIImage imageNamed:@"icon_post_enable.png"] forState:UIControlStateNormal];
     [_writeBtn addTarget:self action:@selector(BtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     [_writeBtn setTag:FWrite];
     [_writeBtn setHidden:YES];
     [self.view addSubview:_writeBtn];
+     **/
     
-   self.m_contentView = [[ContentViewController alloc]initWithNibName:@"ContentViewController" bundle:nil];
+    self.m_contentView = [[ContentViewController alloc]initWithNibName:@"ContentViewController" bundle:nil];
+    NSLog(@"kDeviceHeight is %f", kDeviceHeight);
     [_m_contentView.view setFrame:CGRectMake(0, 44, kDeviceWidth, kDeviceHeight-44*2)];
         [self.view addSubview:_m_contentView.view];
     
-    UIImage *barImage = [UIImage imageNamed:@"bar_background.png"];
+    UIImage *barImage = [UIImage imageNamed:@"header_background_pink.png"];
     UIImageView *barView = [[UIImageView alloc] initWithImage:barImage];
-    [barView setFrame:CGRectMake(0, 480-4-22, 320, 44)];
+    [barView setFrame:CGRectMake(0, 480-44, 320, 44)];
     [self.view addSubview:barView];
     
+    /**
     _topBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_topBtn setFrame:CGRectMake(30,424,32,32)];
     [_topBtn setBackgroundImage:[UIImage imageNamed:@"icon_top_active.png"] forState:UIControlStateDisabled];
@@ -91,6 +95,7 @@
     [_recentBtn setTag:FRecent];
     [_recentBtn setHidden:YES];
     [self.view addSubview:_recentBtn];
+     **/
     
     
 }

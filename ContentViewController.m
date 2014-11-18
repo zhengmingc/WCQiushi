@@ -40,7 +40,7 @@ UITableViewDelegate
     
     CGRect bounds = self.view.bounds;
     bounds.size.height  -= 44.f*2;
-    self.tableView = [[PullingRefreshTableView alloc] initWithFrame:bounds pullingDelegate:self];
+    _tableView = [[PullingRefreshTableView alloc] initWithFrame:bounds pullingDelegate:self];
     _tableView.separatorColor = UITableViewCellSeparatorStyleNone;
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.dataSource = self;

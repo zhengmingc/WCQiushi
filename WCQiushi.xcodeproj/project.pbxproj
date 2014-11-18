@@ -65,6 +65,8 @@
 		F35EB94319EF3102008EE50D /* pulish_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F35EB91919EF3102008EE50D /* pulish_bg.png */; };
 		F35EB94419EF3102008EE50D /* thumb_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = F35EB91A19EF3102008EE50D /* thumb_avatar.png */; };
 		F35EB94519EF3102008EE50D /* thumb_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = F35EB91B19EF3102008EE50D /* thumb_pic.png */; };
+		F39857221A1AB61300AB9235 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = F39857211A1AB61300AB9235 /* background.png */; };
+		F39857241A1ABD2E00AB9235 /* header_background_pink.png in Resources */ = {isa = PBXBuildFile; fileRef = F39857231A1ABD2E00AB9235 /* header_background_pink.png */; };
 		F3E787181A1170FD005AEA46 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E787161A1170FD005AEA46 /* CommentsViewController.m */; };
 		F3E787191A1170FD005AEA46 /* CommentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3E787171A1170FD005AEA46 /* CommentsViewController.xib */; };
 		F3E7872E1A117365005AEA46 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E7871C1A117365005AEA46 /* ASIAuthenticationDialog.m */; };
@@ -183,6 +185,8 @@
 		F35EB91919EF3102008EE50D /* pulish_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pulish_bg.png; sourceTree = "<group>"; };
 		F35EB91A19EF3102008EE50D /* thumb_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_avatar.png; sourceTree = "<group>"; };
 		F35EB91B19EF3102008EE50D /* thumb_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_pic.png; sourceTree = "<group>"; };
+		F39857211A1AB61300AB9235 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = images2/background.png; sourceTree = "<group>"; };
+		F39857231A1ABD2E00AB9235 /* header_background_pink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header_background_pink.png; path = images2/header_background_pink.png; sourceTree = "<group>"; };
 		F3E787151A1170FD005AEA46 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentsViewController.h; path = ../CommentsViewController.h; sourceTree = "<group>"; };
 		F3E787161A1170FD005AEA46 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentsViewController.m; path = ../CommentsViewController.m; sourceTree = "<group>"; };
 		F3E787171A1170FD005AEA46 /* CommentsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommentsViewController.xib; path = ../CommentsViewController.xib; sourceTree = "<group>"; };
@@ -364,6 +368,7 @@
 		F35EB8C019EEDF38008EE50D /* WCQiushi */ = {
 			isa = PBXGroup;
 			children = (
+				F39857201A1AAE1800AB9235 /* images2 */,
 				F3E787151A1170FD005AEA46 /* CommentsViewController.h */,
 				F3E7875F1A1412FD005AEA46 /* ContentViewController.h */,
 				F3E787601A1412FD005AEA46 /* ContentViewController.m */,
@@ -463,6 +468,15 @@
 				F35EB91B19EF3102008EE50D /* thumb_pic.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		F39857201A1AAE1800AB9235 /* images2 */ = {
+			isa = PBXGroup;
+			children = (
+				F39857231A1ABD2E00AB9235 /* header_background_pink.png */,
+				F39857211A1AB61300AB9235 /* background.png */,
+			);
+			name = images2;
 			sourceTree = "<group>";
 		};
 		F3E7871A1A117365005AEA46 /* ASIHttp */ = {
@@ -679,7 +693,9 @@
 				F3E787191A1170FD005AEA46 /* CommentsViewController.xib in Resources */,
 				F35EB93F19EF3102008EE50D /* icon_top_enable.png in Resources */,
 				F35EB92B19EF3102008EE50D /* Default@2x.png in Resources */,
+				F39857241A1ABD2E00AB9235 /* header_background_pink.png in Resources */,
 				F35EB92619EF3102008EE50D /* button_login.png in Resources */,
+				F39857221A1AB61300AB9235 /* background.png in Resources */,
 				F35EB8CF19EEDF38008EE50D /* Images.xcassets in Resources */,
 				F3E7876D1A1419A2005AEA46 /* blueArrowDown.png in Resources */,
 				F35EB93E19EF3102008EE50D /* icon_top_active.png in Resources */,
