@@ -10,7 +10,7 @@
 
 @implementation ContentCell
 @synthesize txtAuthor,txtContent,txtTag,centerImageView,footView,commentsBtn,goodBtn,badBtn;
-@synthesize headPhoto,tagPhoto,imgMidUrl,imgUrl, imgPhotoBtn;
+@synthesize headPhoto,tagPhoto,imgMidUrl,imgUrl, imgPhotoBtn, headImgUrl;
 
 - (void)awakeFromNib {
     // Initialization code
@@ -29,7 +29,7 @@
         
         UIImage *centerImage = [UIImage imageNamed:@"block_center_background.png"];
         centerImageView = [[UIImageView alloc] initWithImage:centerImage];
-        [centerImageView setFrame:CGRectMake( 0, 0, 320, 220)];
+        [centerImageView setFrame:CGRectMake( 0, 0, 520, 420)];
         [self addSubview:centerImageView];
         
         txtContent = [[UILabel alloc] initWithFrame:CGRectMake(20, 28, 280, 220)];
@@ -44,7 +44,6 @@
         [self addSubview:imgPhotoBtn];
         
         headPhoto = [[UIImageView alloc] initWithFrame:CGRectMake(15, 5, 24, 24)];
-        [headPhoto setImage:[UIImage imageNamed:@"thumb_avatar.png"]];
         [self addSubview:headPhoto];
         
         txtAuthor = [[UILabel alloc]initWithFrame:CGRectMake(45, 5, 200, 30)];
@@ -76,7 +75,7 @@
     [txtContent setFrame:CGRectMake(20, 28, 280, size.height + 60)];
     
     if (imgUrl!=nil&&![imgUrl isEqualToString:@""]) {
-        [imgPhotoBtn setFrame:CGRectMake(30, size.height+70, 72, 72)];
+        [imgPhotoBtn setFrame:CGRectMake(30, size.height+70, 200, 200)];
         [centerImageView setFrame:CGRectMake(0, 0, 320, size.height+200)];
         [imgPhotoBtn setImageURL:[NSURL URLWithString:imgUrl]];
         [self imageButtonLoadedImage:imgPhotoBtn];
@@ -86,6 +85,13 @@
         [imgPhotoBtn cancelImageLoad];
         [imgPhotoBtn setFrame:CGRectMake(120, size.height, 0, 0)];
         [centerImageView setFrame:CGRectMake(0, 0, 320, size.height+120)];
+    }
+    
+    if(headImgUrl){
+        [headPhoto setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:headImgUrl]]]];
+    }
+    else {
+        [headPhoto setImage:[UIImage imageNamed:@"thumb_avatar.png"]];
     }
     
     [footView setFrame:CGRectMake(0, centerImageView.frame.size.height, 320, 15)];

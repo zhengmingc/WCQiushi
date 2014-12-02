@@ -12,6 +12,7 @@
 
 @property(nonatomic, copy) NSString *imageURL;
 @property(nonatomic, copy) NSString *imageMidURL;
+@property(nonatomic, copy) NSString *authorImgURL;
 @property(nonatomic) NSTimeInterval published_at;
 @property(nonatomic, copy) NSString *tag;
 @property(nonatomic, copy) NSString *qiushiID;
@@ -20,6 +21,8 @@
 @property(nonatomic) int upCount;
 @property(nonatomic) int downCount;
 @property(nonatomic, copy) NSString *author;
+@property(nonatomic, copy) NSString *authorID;
+@property(nonatomic, copy) NSString *icon;
 
 -(id) initWithDictionary :(NSDictionary *) dictionary;
 

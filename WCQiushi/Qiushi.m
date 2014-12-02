@@ -25,7 +25,7 @@
         if(image != [NSNull null])
         {
             self.imageURL = [dictionary objectForKey:@"image"];
-            NSString *newImageURL = [NSString stringWithFormat:@"http://pic.qiushibaike.com/system/pictures/%@/%@/small/%@",[_qiushiID substringToIndex:4],_qiushiID,_imageURL];
+            NSString *newImageURL = [NSString stringWithFormat:@"http://pic.qiushibaike.com/system/pictures/%@/%@/small/%@",[_qiushiID substringToIndex:4],_qiushiID, _imageURL];
             NSString *newImageMidURL = [NSString stringWithFormat:@"http://pic.qiushibaike.com/system/pictures/%@/%@/medium/%@",[_qiushiID substringToIndex:4],_qiushiID,_imageURL];
             self.imageURL = newImageURL;
             self.imageMidURL = newImageMidURL;
@@ -40,6 +40,9 @@
         {
             NSDictionary *user =[NSDictionary dictionaryWithDictionary:[dictionary objectForKey:@"user"]];
             self.author = [user objectForKey:@"login"];
+            self.authorID = [user objectForKey:@"id"];
+            self.icon = [user objectForKey:@"icon"];
+            self.authorImgURL = [NSString stringWithFormat:@"http://pic.qiushibaike.com/system/avtnew/%@/%@/medium/%@", [_authorID substringToIndex:4], _authorID, _icon];
         }
         
     }

@@ -40,10 +40,10 @@
 
 #define CommentSURLString(ID) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/%@/comments?count=500&page=1", ID]
 
-typedef  enum
+typedef enum
 {
+    QiuShiTypeNew,
     QiuShiTypeTop,
-    QiuShitypeNew,
     QiuShiTypePhoto,
 }QiuShiType;
 

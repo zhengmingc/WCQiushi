@@ -59,15 +59,6 @@ UITableViewDelegate
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 -(void) loadData{
     self.page++;
@@ -87,12 +78,12 @@ UITableViewDelegate
         default:
             break;
     }
-    
+    /**
     switch (_qiuType) {
         case QiuShiTypeTop:
             url = [NSURL URLWithString:SuggestURLString(10, self.page)];
             break;
-        case QiuShitypeNew:
+        case QiuShiTypeNew:
             url = [NSURL URLWithString:LatestURLString(10, self.page)];
             break;
         case QiuShiTypePhoto:
@@ -102,6 +93,7 @@ UITableViewDelegate
         default:
             break;
     }
+     **/
     _asiRequest = [ASIHTTPRequest requestWithURL:url];
     [_asiRequest setDelegate:self];
     [_asiRequest setDidFinishSelector:@selector(GetResult:)];
@@ -170,7 +162,9 @@ UITableViewDelegate
         cell.imgUrl = @"";
         cell.imgMidUrl = @"";
     }
-    
+    if(qs.authorImgURL != nil){
+        cell.headImgUrl = qs.authorImgURL;
+    }
     if(qs.author !=nil && ![qs.author isEqual:@""]){
         cell.txtAuthor.text = qs.author;
     }else{

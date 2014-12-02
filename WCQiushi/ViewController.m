@@ -70,7 +70,7 @@
     self.m_contentView = [[ContentViewController alloc]initWithNibName:@"ContentViewController" bundle:nil];
     NSLog(@"kDeviceHeight is %f", kDeviceHeight);
     [_m_contentView.view setFrame:CGRectMake(0, 44, kDeviceWidth, kDeviceHeight-44*2)];
-        [self.view addSubview:_m_contentView.view];
+    [self.view addSubview:_m_contentView.view];
     
     UIImage *barImage = [UIImage imageNamed:@"header_background_pink.png"];
     UIImageView *barView = [[UIImageView alloc] initWithImage:barImage];
@@ -146,7 +146,7 @@
         {
             _topBtn.enabled = YES;
             _recentBtn.enabled = NO;
-            [_m_contentView LoadPageOfQiushiType:QiuShitypeNew AndTime:QiuShiTimeRandom];
+            [_m_contentView LoadPageOfQiushiType:QiuShiTypeNew AndTime:QiuShiTimeRandom];
             [_fourTypeBtn setTitle:@"latest" forState:UIControlStateNormal];
         }
         default:
