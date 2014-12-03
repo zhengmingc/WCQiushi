@@ -10,7 +10,7 @@
 
 @implementation ContentCell
 @synthesize txtAuthor,txtContent,txtTag,centerImageView,footView,commentsBtn,goodBtn,badBtn;
-@synthesize headPhoto,tagPhoto,imgMidUrl,imgUrl, imgPhotoBtn, headImgUrl;
+@synthesize headPhoto,tagPhoto,imgPhotoBtn;
 
 - (void)awakeFromNib {
     // Initialization code
@@ -22,6 +22,14 @@
     // Configure the view for the selected state
 }
 
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withQS :(Qiushi *)qs
+{
+    _qs = qs;
+    
+    return [self initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+}
+
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -29,32 +37,47 @@
         
         UIImage *centerImage = [UIImage imageNamed:@"block_center_background.png"];
         centerImageView = [[UIImageView alloc] initWithImage:centerImage];
-        [centerImageView setFrame:CGRectMake( 0, 0, 520, 420)];
+        //[centerImageView setFrame:CGRectMake( 0, 0, 520, 420)];
         [self addSubview:centerImageView];
         
-        txtContent = [[UILabel alloc] initWithFrame:CGRectMake(20, 28, 280, 220)];
-        [txtContent setBackgroundColor:[UIColor clearColor]];
-        [txtContent setFont :[UIFont fontWithName:@"Arial" size:16]];
-        [txtContent setLineBreakMode:NSLineBreakByTruncatingTail];
-        [self addSubview:txtContent];
-        
-        imgPhotoBtn = [[EGOImageButton alloc] initWithPlaceholderImage:[UIImage imageNamed:@"thumb_pic"] delegate:self];
-        [imgPhotoBtn setFrame:CGRectMake(0, 0, 0, 0)];
-        [imgPhotoBtn addTarget:self action:@selector(ImageBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:imgPhotoBtn];
-        
-        headPhoto = [[UIImageView alloc] initWithFrame:CGRectMake(15, 5, 24, 24)];
+        headPhoto = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, 30, 30)];
         [self addSubview:headPhoto];
         
-        txtAuthor = [[UILabel alloc]initWithFrame:CGRectMake(45, 5, 200, 30)];
-        [txtAuthor setText:@"Anoynmous"];
+        txtAuthor = [[UILabel alloc]initWithFrame:CGRectMake(55, 10, 200, 30)];
         [txtAuthor setFont:[UIFont fontWithName:@"Arial" size:16]];
         [txtAuthor setBackgroundColor:[UIColor clearColor]];
         [txtAuthor setTextColor:[UIColor brownColor]];
         [self addSubview:txtAuthor];
         
+        
+        txtContent = [[UILabel alloc] initWithFrame:CGRectMake(20, 40, 280, 150)];
+        [txtContent setBackgroundColor:[UIColor clearColor]];
+        [txtContent setFont :[UIFont fontWithName:@"Arial" size:16]];
+        [txtContent setLineBreakMode:NSLineBreakByTruncatingTail];
+        [txtContent setNumberOfLines:12];
+        [self addSubview:txtContent];
+        
+      
+        //imgPhotoBtn = [[EGOImageButton alloc] initWithPlaceholderImage:[UIImage imageNamed:@"thumb_pic"] delegate:self];
+        //[imgPhotoBtn setFrame:CGRectMake(0, 0, 0, 0)];
+        imgPhotoBtn = [[UIImageView alloc] init];
+        //[imgPhotoBtn addTarget:self action:@selector(ImageBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:imgPhotoBtn];
+        
+        /**
         txtTag = [[UILabel alloc] initWithFrame:CGRectMake(45, 200, 200, 30)];
         [txtTag setText:@""];
+        if(_qs.tag != nil && ![_qs.tag isEqual:@""]){
+           [txtTag setText:_qs.tag];
+        } else {
+            [txtTag setText:@""];
+        }
+         **/
+        /**
+        [goodBtn setTitle:[NSString stringWithFormat:@"%d", _qs.upCount] forState:UIControlStateNormal];
+        [badBtn setTitle:[NSString stringWithFormat:@"%d", _qs.downCount] forState:UIControlStateNormal];
+        [commentsBtn setTitle:[NSString stringWithFormat:@"%d", _qs.commentsCount] forState:UIControlStateNormal];
+         **/
         
     }
     
@@ -68,32 +91,7 @@
 
 -(void) resizeTheHeight
 {
-    CGFloat contentWidth = 280;
-    UIFont *font = [UIFont fontWithName:@"Arial" size:16];
-    CGSize size = [txtContent.text sizeWithFont:font constrainedToSize:CGSizeMake(contentWidth, 220) lineBreakMode:UILineBreakModeTailTruncation];
-    
-    [txtContent setFrame:CGRectMake(20, 28, 280, size.height + 60)];
-    
-    if (imgUrl!=nil&&![imgUrl isEqualToString:@""]) {
-        [imgPhotoBtn setFrame:CGRectMake(30, size.height+70, 200, 200)];
-        [centerImageView setFrame:CGRectMake(0, 0, 320, size.height+200)];
-        [imgPhotoBtn setImageURL:[NSURL URLWithString:imgUrl]];
-        [self imageButtonLoadedImage:imgPhotoBtn];
-    }
-    else
-    {
-        [imgPhotoBtn cancelImageLoad];
-        [imgPhotoBtn setFrame:CGRectMake(120, size.height, 0, 0)];
-        [centerImageView setFrame:CGRectMake(0, 0, 320, size.height+120)];
-    }
-    
-    if(headImgUrl){
-        [headPhoto setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:headImgUrl]]]];
-    }
-    else {
-        [headPhoto setImage:[UIImage imageNamed:@"thumb_avatar.png"]];
-    }
-    
+  
     [footView setFrame:CGRectMake(0, centerImageView.frame.size.height, 320, 15)];
     [goodBtn setFrame:CGRectMake(10,centerImageView.frame.size.height-28,70,32)];
     [badBtn setFrame:CGRectMake(100,centerImageView.frame.size.height-28,70,32)];

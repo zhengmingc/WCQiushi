@@ -14,6 +14,8 @@
 #import "ContentCell.h"
 #import "CommentsViewController.h"
 
+#define imgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+
 @interface ContentViewController ()<
 PullingRefreshTableViewDelegate,
 ASIHTTPRequestDelegate,
@@ -145,42 +147,76 @@ UITableViewDelegate
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString * contentIdentifier = @"ContentCell";
+    Qiushi *qs = [self.list objectAtIndex:[indexPath row]];
+    
     ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:contentIdentifier];
     if(cell == nil){
-        cell = [[ContentCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:contentIdentifier];
+        cell = [[ContentCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:contentIdentifier withQS:qs];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.backgroundColor = [UIColor clearColor];
         cell.contentView.backgroundColor = [UIColor clearColor];
-        [cell.txtContent setNumberOfLines:12];
     }
-    Qiushi *qs = [self.list objectAtIndex:[indexPath row]];
-    cell.txtContent.text = qs.content;
-    if(qs.imageURL != nil && ![qs.imageURL  isEqual: @""]){
-        cell.imgUrl = qs.imageURL;
-        cell.imgMidUrl = qs.imageMidURL;
-    } else {
-        cell.imgUrl = @"";
-        cell.imgMidUrl = @"";
+    
+    if(qs.authorImgURL){
+        dispatch_async(imgQueue, ^{
+            NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:qs.authorImgURL]];
+            if(imgData){
+                UIImage *image = [UIImage imageWithData:imgData];
+                if(image){
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        ContentCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
+                        if(updateCell){
+                            updateCell.headPhoto.image = image;
+                        }
+                    });
+                }
+            }
+            
+            
+        });
+
     }
-    if(qs.authorImgURL != nil){
-        cell.headImgUrl = qs.authorImgURL;
+    else {
+        [cell.headPhoto setImage:[UIImage imageNamed:@"thumb_avatar.png"]];
     }
+    
     if(qs.author !=nil && ![qs.author isEqual:@""]){
-        cell.txtAuthor.text = qs.author;
-    }else{
-        cell.txtAuthor.text = @"Anoynmous";
+        [cell.txtAuthor setText:qs.author];
+    } else{
+        [cell.txtAuthor setText:@"Anoynmous"];
     }
     
-    if(qs.tag != nil && ![qs.tag isEqual:@""]){
-        cell.txtTag.text = qs.tag;
-    } else {
-        cell.txtTag.text = @"";
-    }
+    [cell.txtContent setText:qs.content];
     
-    [cell.goodBtn setTitle:[NSString stringWithFormat:@"%d", qs.upCount] forState:UIControlStateNormal];
-    [cell.badBtn setTitle:[NSString stringWithFormat:@"%d", qs.downCount] forState:UIControlStateNormal];
-    [cell.commentsBtn setTitle:[NSString stringWithFormat:@"%d", qs.commentsCount] forState:UIControlStateNormal];
-    [cell resizeTheHeight];
+    if (qs.imageURL!=nil && ![qs.imageURL isEqualToString:@""]) {
+        [cell.imgPhotoBtn setFrame:CGRectMake(30,  cell.txtContent.frame.size.height+70, 150, 150)];
+        [cell.centerImageView setFrame:CGRectMake(0, 0, 320, cell.txtContent.frame.size.height+250)];
+
+        dispatch_async(imgQueue, ^{
+            NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:qs.imageURL]];
+            if(imgData){
+                UIImage *image = [UIImage imageWithData:imgData];
+                if(image){
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        ContentCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
+                        if(updateCell){
+                            updateCell.imgPhotoBtn.image = image;
+                        }
+                    });
+                }
+            }
+                               
+            
+        });
+    }
+    else
+    {
+        //[imgPhotoBtn cancelImageLoad];
+        [cell.imgPhotoBtn setFrame:CGRectMake(120,  cell.txtContent.frame.size.height, 0, 0)];
+        [cell.centerImageView setFrame:CGRectMake(0, 0, 320,  cell.txtContent.frame.size.height+120)];
+    }
+
+    //[cell resizeTheHeight];
     return cell;
 }
 
@@ -235,20 +271,14 @@ UITableViewDelegate
 
 -(CGFloat) getTheHeight:(NSInteger)row
 {
-    CGFloat contentWidth = 280;
-    UIFont *font = [UIFont fontWithName:@"Arial" size:14];
-    
-    Qiushi *qs = [self.list objectAtIndex:row];
-    NSString *content = qs.content;
-    
-    CGSize size = [content sizeWithFont:font constrainedToSize:CGSizeMake(contentWidth, 220) lineBreakMode:UILineBreakModeTailTruncation];
     CGFloat height;
+    Qiushi *qs = [self.list objectAtIndex:row];
     if(qs.imageURL == nil) {
-        height = size.height + 140;
-    }else {
-        height = size.height + 220;
+        height = 370;
     }
-    
+    else {
+        height = 450;
+    }
     return height;
 }
 @end

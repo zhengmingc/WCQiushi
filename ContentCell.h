@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "EGOImageButton.h"
+#import "Qiushi.h"
 
 @interface ContentCell : UITableViewCell<EGOImageButtonDelegate>
 
@@ -18,15 +19,15 @@
 @property(nonatomic, retain) UILabel *txtTag;
 @property(nonatomic, retain) UILabel *txtAuthor;
 @property(nonatomic, retain) UILabel *txtContent;
-@property(nonatomic, copy) NSString *imgUrl;
-@property(nonatomic, copy) NSString *imgMidUrl;
-@property(nonatomic, copy) NSString *headImgUrl;
+
 @property(nonatomic, retain) UIButton *goodBtn;
 @property(nonatomic, retain) UIButton *badBtn;
 @property(nonatomic, retain) UIButton *commentsBtn;
+@property(nonatomic, retain) Qiushi *qs;
 
-@property(nonatomic, retain)EGOImageButton *imgPhotoBtn;
+//@property(nonatomic, retain)EGOImageButton *imgPhotoBtn;
+@property(nonatomic, retain) UIImageView *imgPhotoBtn;
 
 -(void) resizeTheHeight;
-
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withQS:(Qiushi *)qs;
 @end

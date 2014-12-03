@@ -171,24 +171,7 @@ UITableViewDelegate>
             cell.contentView.backgroundColor = [UIColor clearColor];
             cell.txtContent.numberOfLines = 0;
         }
-        cell.txtContent.text = _qs.content;
-        if(_qs.imageURL != nil && ![_qs.imageURL isEqual:@""]){
-            cell.imgUrl = _qs.imageURL;
-            cell.imgMidUrl = _qs.imageMidURL;
-        } else {
-            cell.imgUrl = @"";
-            cell.imgMidUrl = @"";
-        }
-        if(_qs.author !=nil && ![_qs.author isEqual:@""]) {
-            cell.txtAuthor.text = _qs.author;
-        } else {
-            cell.txtAuthor.text = @"Anonymous";
-        }
-        if(_qs.tag != nil && ![_qs.tag isEqual:@""]){
-            cell.txtTag.text = _qs.tag;
-        }else {
-            cell.txtTag.text = @"";
-        }
+
         [cell.goodBtn setTitle:[NSString stringWithFormat:@"%d", _qs.upCount] forState:UIControlStateNormal];
         [cell.goodBtn setEnabled:NO];
         [cell.badBtn setTitle:[NSString stringWithFormat:@"%d", _qs.downCount] forState:UIControlStateNormal];
