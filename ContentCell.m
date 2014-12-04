@@ -37,32 +37,30 @@
         
         UIImage *centerImage = [UIImage imageNamed:@"block_center_background.png"];
         centerImageView = [[UIImageView alloc] initWithImage:centerImage];
-        //[centerImageView setFrame:CGRectMake( 0, 0, 520, 420)];
-        [self addSubview:centerImageView];
+        [self.contentView addSubview:centerImageView];
         
         headPhoto = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, 30, 30)];
-        [self addSubview:headPhoto];
+        [self.contentView addSubview:headPhoto];
         
-        txtAuthor = [[UILabel alloc]initWithFrame:CGRectMake(55, 10, 200, 30)];
+        txtAuthor = [[UILabel alloc] initWithFrame:CGRectMake(55, 10, 200, 30)];
         [txtAuthor setFont:[UIFont fontWithName:@"Arial" size:16]];
         [txtAuthor setBackgroundColor:[UIColor clearColor]];
         [txtAuthor setTextColor:[UIColor brownColor]];
-        [self addSubview:txtAuthor];
+        [self.contentView addSubview:txtAuthor];
         
         
-        txtContent = [[UILabel alloc] initWithFrame:CGRectMake(20, 40, 280, 150)];
+        //txtContent = [[UILabel alloc] initWithFrame:CGRectMake(20, headPhoto.frame.size.height + 10, 280, 150)];
+        txtContent = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
         [txtContent setBackgroundColor:[UIColor clearColor]];
         [txtContent setFont :[UIFont fontWithName:@"Arial" size:16]];
-        [txtContent setLineBreakMode:NSLineBreakByTruncatingTail];
+        [txtContent setLineBreakMode:NSLineBreakByTruncatingHead];
         [txtContent setNumberOfLines:12];
-        [self addSubview:txtContent];
+        [self.contentView addSubview:txtContent];
         
-      
-        //imgPhotoBtn = [[EGOImageButton alloc] initWithPlaceholderImage:[UIImage imageNamed:@"thumb_pic"] delegate:self];
-        //[imgPhotoBtn setFrame:CGRectMake(0, 0, 0, 0)];
+    
         imgPhotoBtn = [[UIImageView alloc] init];
         //[imgPhotoBtn addTarget:self action:@selector(ImageBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:imgPhotoBtn];
+        [self.contentView addSubview:imgPhotoBtn];
         
         /**
         txtTag = [[UILabel alloc] initWithFrame:CGRectMake(45, 200, 200, 30)];

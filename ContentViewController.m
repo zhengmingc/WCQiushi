@@ -188,9 +188,17 @@ UITableViewDelegate
     
     [cell.txtContent setText:qs.content];
     
+    CGRect textRect = [qs.content boundingRectWithSize:CGSizeMake(280,150)
+                                               options:NSStringDrawingUsesLineFragmentOrigin
+                                            attributes:@{NSFontAttributeName:[UIFont fontWithName:@"Arial" size:16]}
+                                               context:nil];
+    
+    [cell.txtContent setFrame:CGRectMake(20, cell.headPhoto.frame.size.height+25, textRect.size.width, textRect.size.height)];
+    
     if (qs.imageURL!=nil && ![qs.imageURL isEqualToString:@""]) {
-        [cell.imgPhotoBtn setFrame:CGRectMake(30,  cell.txtContent.frame.size.height+70, 150, 150)];
-        [cell.centerImageView setFrame:CGRectMake(0, 0, 320, cell.txtContent.frame.size.height+250)];
+        [cell.imgPhotoBtn setFrame:CGRectMake(30,  textRect.size.height+cell.headPhoto.frame.size.height+50, 150, 150)];
+        [cell.centerImageView setFrame:CGRectMake(0, 0, 320,
+                                        cell.headPhoto.frame.size.height + textRect.size.height+cell.imgPhotoBtn.frame.size.height+90)];
 
         dispatch_async(imgQueue, ^{
             NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:qs.imageURL]];
@@ -212,8 +220,8 @@ UITableViewDelegate
     else
     {
         //[imgPhotoBtn cancelImageLoad];
-        [cell.imgPhotoBtn setFrame:CGRectMake(120,  cell.txtContent.frame.size.height, 0, 0)];
-        [cell.centerImageView setFrame:CGRectMake(0, 0, 320,  cell.txtContent.frame.size.height+120)];
+        [cell.imgPhotoBtn setFrame:CGRectMake(120,  textRect.size.height+25, 0, 0)];
+        [cell.centerImageView setFrame:CGRectMake(0, 0, 320,  textRect.size.height+120)];
     }
 
     //[cell resizeTheHeight];
@@ -274,10 +282,10 @@ UITableViewDelegate
     CGFloat height;
     Qiushi *qs = [self.list objectAtIndex:row];
     if(qs.imageURL == nil) {
-        height = 370;
+        height = 280;
     }
     else {
-        height = 450;
+        height = 430;
     }
     return height;
 }

@@ -10,7 +10,7 @@
 #import "EGOImageButton.h"
 #import "Qiushi.h"
 
-@interface ContentCell : UITableViewCell<EGOImageButtonDelegate>
+@interface ContentCell : UITableViewCell
 
 @property(nonatomic, retain) UIImageView *headPhoto;
 @property(nonatomic, retain) UIImageView *tagPhoto;
@@ -24,8 +24,6 @@
 @property(nonatomic, retain) UIButton *badBtn;
 @property(nonatomic, retain) UIButton *commentsBtn;
 @property(nonatomic, retain) Qiushi *qs;
-
-//@property(nonatomic, retain)EGOImageButton *imgPhotoBtn;
 @property(nonatomic, retain) UIImageView *imgPhotoBtn;
 
 -(void) resizeTheHeight;
