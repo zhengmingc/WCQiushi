@@ -27,5 +27,5 @@
 @property(nonatomic, retain) UIImageView *imgPhotoBtn;
 
 -(void) resizeTheHeight;
--(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withQS:(Qiushi *)qs;
+
 @end

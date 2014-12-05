@@ -22,14 +22,6 @@
     // Configure the view for the selected state
 }
 
--(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withQS :(Qiushi *)qs
-{
-    _qs = qs;
-    
-    return [self initWithStyle:style reuseIdentifier:reuseIdentifier];
-    
-}
-
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

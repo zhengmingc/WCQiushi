@@ -151,7 +151,7 @@ UITableViewDelegate
     
     ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:contentIdentifier];
     if(cell == nil){
-        cell = [[ContentCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:contentIdentifier withQS:qs];
+        cell = [[ContentCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:contentIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.backgroundColor = [UIColor clearColor];
         cell.contentView.backgroundColor = [UIColor clearColor];
